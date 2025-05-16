@@ -86,6 +86,17 @@ x-airflow-common:
       condition: service_healthy
 
 services:
+  jupyterlab:
+    image: jupyter/tensorflow-notebook:latest
+    container_name: jupyterlab
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./timeseries/notebooks:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    command: start-notebook.sh --LabApp.token=''
+
   superset:
       build:
         context: ./superset
