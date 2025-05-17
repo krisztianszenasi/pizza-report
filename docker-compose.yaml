@@ -77,6 +77,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
+    - ${AIRFLOW_PROJ_DIR:-.}/scripts:/opt/airflow/scripts
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -126,7 +127,7 @@ services:
       start_period: 5s
     restart: always
 
-  s:
+  pizza_db:
     image: postgres:13
     environment:
       POSTGRES_USER: pizza
@@ -325,6 +326,8 @@ services:
         echo "Files in shared volumes:"
         echo
         ls -la /opt/airflow/{logs,dags,plugins,config}
+        echo 'Running custom Airflow setup script...' &&
+        python /opt/airflow/scripts/init_airflow_setup.py
 
     # yamllint enable rule:line-length
     environment:
