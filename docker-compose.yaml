@@ -126,7 +126,7 @@ services:
       start_period: 5s
     restart: always
 
-  pizza_db:
+  s:
     image: postgres:13
     environment:
       POSTGRES_USER: pizza
