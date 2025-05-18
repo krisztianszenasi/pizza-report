@@ -1,18 +1,3 @@
-<div style="page-break-after: always; display: flex; flex-direction: column; justify-content: center; height: 100vh; text-align: center;">
-
-<h1>Üzleti Intelligencia Labor</h1>
-
-<h2>Dokumentáció</h2>
-
-<h3>Szénási Krisztián</h3>
-<h4>XYD66R</h4>
-
-</div>
-
-## A Projekt elérhetősége
-
-A projekt [ezen](https://github.com/krisztianszenasi/pizza-report) a github repón érhető el. A bemutató videó pedig [itt](https://www.youtube.com/watch?v=91bdkp9h66M) nézhető meg.
-
 ## A Projekt Felépítése
 
 A projekt **docker**-t és **docker compose**-t használ a különböző komponensek leírásához illetve futtatásához. Ezek a `docker-compose.yaml` fájlban vannak leírva. Alapvetően az **Apache Airflow** által biztosított javasolt [docker-compose.yaml](https://airflow.apache.org/docs/apache-airflow/3.0.1/docker-compose.yaml) fájlból indultam ki. Ezeket egészítettem ki további **service**-ekkel.
