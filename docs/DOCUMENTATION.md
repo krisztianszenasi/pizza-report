@@ -9,7 +9,7 @@
 
 </div>
 
-## Projekt elérhetősége
+## A Projekt elérhetősége
 
 A projekt [ezen](https://github.com/krisztianszenasi/pizza-report) a github repón érhető el.
 
