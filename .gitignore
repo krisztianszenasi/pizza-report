@@ -1,2 +1,4 @@
 airflow/dags/files/done
 airflow/logs
+
+.DS_Store
