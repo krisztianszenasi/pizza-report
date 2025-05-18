@@ -9,6 +9,10 @@
 
 </div>
 
+## Projekt elérhetősge
+
+A projekt [ezen](https://github.com/krisztianszenasi/pizza-report) a github repón érhető el.
+
 ## A Projekt Felépítése
 
 A projekt **docker**-t és **docker compose**-t használ a különböző komponensek leírásához illetve futtatásához. Ezek a `docker-compose.yaml` fájlban vannak leírva. Alapvetően az **Apache Airflow** által biztosított javasolt [docker-compose.yaml](https://airflow.apache.org/docs/apache-airflow/3.0.1/docker-compose.yaml) fájlból indultam ki. Ezeket egészítettem ki további **service**-ekkel.
