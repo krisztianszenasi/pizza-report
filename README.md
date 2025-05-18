@@ -1,8 +1,12 @@
 # Pizza Sales BI Project
 
+This is a demo I did as an assignment for my BI class in university. It is only meant for local development.
+
+A somewhat detailed documentation can be read [here](docs/DOCUMENTATION.md) (_in hungarian_).
+
 ## CSV Files
 
-The `untouched` directory contains the original `.csv` files from [here](https://www.kaggle.com/datasets/mysarahmadbhat/pizza-place-sales)
+The `untouched` directory contains the original `.csv` files from [here](https://www.kaggle.com/datasets/mysarahmadbhat/pizza-place-sales).
 
 In the `utils` folder with the `spit_csv_files.py` script the orders can be
 split up by month. The results will appear in the `utils/monthly_chunks` folder.
@@ -15,7 +19,7 @@ cd utils && python split_csv_files.py
 
 > If you wan't to run it yourself dont forget to install the packages from `requirements.txt`
 
-## Starging The Project
+## Starting The Project
 
 The project is very simple to start since it uses docker containers.
 
@@ -28,7 +32,7 @@ docker compose up airflow-init
 and the you can run with build
 
 ```
-docker-compose up --build
+docker compose up --build
 ```
 
 > Some operating systems (Fedora, ArchLinux, RHEL, Rocky) have recently introduced Kernel changes that result in Airflow in Docker Compose consuming 100% memory when run inside the community Docker implementation maintained by the OS teams. Read more [here](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html).
@@ -44,16 +48,15 @@ appropirate `.csv` files into `airflow/files/to_process` then the engine will
 process them automatically. Mainly there are three **DAGS**:
 
 * **load_data_to_staging**: loads the data from the `.csv` files to the **staging tables**
-* **transform_from_staging** moves the data from the **staging tables** to the **final tables** and optionally removes incorrect data
+* **transform_from_staging**: moves the data from the **staging tables** to the **final tables** and optionally removes incorrect data
 * **aggragate_data**: creates additional tables for preaggregated data to speed up queries
 
-To tigger the pipe line simply place the `.csv` files into the `to_process` folder.
+To tigger the pipeline simply place the `.csv` files into the `to_process` folder.
 
 You can either place all the files from `untouched_data` or use the `move_orders.sh` script for incremental
 loading.
 
-Assuming that the `pizzas.csv` and `pizza_types.csv` files are already loaded you can incrementally load the
-order data by month:
+Assuming that the `pizzas.csv` and `pizza_types.csv` files are already loaded you can incrementally load the orders data by month:
 
 ```
 ./move_orders.sh 2015-01
