@@ -11,7 +11,7 @@
 
 ## A Projekt elérhetősége
 
-A projekt [ezen](https://github.com/krisztianszenasi/pizza-report) a github repón érhető el.
+A projekt [ezen](https://github.com/krisztianszenasi/pizza-report) a github repón érhető el. A bemutató videó pedig [itt](https://www.youtube.com/watch?v=91bdkp9h66M) nézhető meg.
 
 ## A Projekt Felépítése
 
