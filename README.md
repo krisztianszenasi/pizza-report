@@ -6,6 +6,8 @@ dangerously.
 
 A somewhat detailed documentation can be read [here](docs/DOCUMENTATION.md) (_in hungarian_).
 
+<img src="docs/assets/charts.png">
+
 ## CSV Files
 
 The `untouched` directory contains the original `.csv` files from [here](https://www.kaggle.com/datasets/mysarahmadbhat/pizza-place-sales).
