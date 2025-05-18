@@ -1,6 +1,8 @@
 # Pizza Sales BI Project
 
-This is a demo I did as an assignment for my BI class in university. It is only meant for local development.
+This is a little demo I whipped up for a BI class assignment at uni. It’s
+strictly for local development — not production, unless you enjoy living
+dangerously.
 
 A somewhat detailed documentation can be read [here](docs/DOCUMENTATION.md) (_in hungarian_).
 
@@ -53,16 +55,15 @@ process them automatically. Mainly there are three **DAGS**:
 
 To tigger the pipeline simply place the `.csv` files into the `to_process` folder.
 
-You can either place all the files from `untouched_data` or use the `move_orders.sh` script for incremental
-loading.
+You can either place all the files from `untouched_data` or use the `move_orders.sh` script for incremental loading.
 
 Assuming that the `pizzas.csv` and `pizza_types.csv` files are already loaded you can incrementally load the orders data by month:
 
 ```
-./move_orders.sh 2015-01
+./move_orders.sh 2015_01
 ```
 
-> This scipt copies the `.csv` files associated with **2015-01** and places
+> This script copies the `.csv` files associated with **2015_01** and places
 > them inside `airflow/dags/files/to_process` from where the **scheduled** dag
 > can pick it up.
 
@@ -71,3 +72,17 @@ Assuming that the `pizzas.csv` and `pizza_types.csv` files are already loaded yo
 [Apache Superset](https://superset.apache.org/) is used for data visualiztaion.
 You can access the application at http://localhost:8088.
 The login credentials are `admin:admin`.
+
+## Additional Thougts
+
+* Yup, I know there are some secret keys chilling in this repo — but don’t worry
+ it’s just a dummy uni assignment. The goal was to make it super easy to spin up,
+ not secure the Pentagon.
+
+* Storing the Superset charts like this? Definitely not award-winning. Ideally,
+they’d be exported as `.json` or `.yaml` and loaded in like a pro — but hey,
+deadlines.
+
+* Feel free to poke around, steal ideas, or use this as inspiration. Just
+remember: this ain’t best practice land — it’s more like “sleep-deprived student
+trying their best to hand something in on time” land.
